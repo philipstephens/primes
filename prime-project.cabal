@@ -1,0 +1,62 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: fa48f64e28a7189fb1268ad6f49772a4805215a719946003308352766fb72b52
+
+name:           prime-project
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/philipstephens/prime-project#readme>
+homepage:       https://github.com/philipstephens/prime-project#readme
+bug-reports:    https://github.com/philipstephens/prime-project/issues
+author:         Philip Stephens
+maintainer:     plusgforce@gmail.com
+copyright:      2020 Philip Stephens
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/philipstephens/prime-project
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_prime_project
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable prime-project-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_prime_project
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , prime-project
+  default-language: Haskell2010
+
+test-suite prime-project-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_prime_project
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , prime-project
+  default-language: Haskell2010
